@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ ! -f "$HOME/.pow/qnnaire" ]; then
+  echo "Please ensure that $HOME/.pow/qnnaire exists and contains a valid port number."
+  exit
+fi
+
+if [ "`lsof -i :3942`" = "" ]; then
+  foreman start -p `cat $HOME/.pow/qnnaire`
+fi
+
+for pid in $(cat tmp/pids/*.pid); do
+  kill $pid;
+done;
+rm tmp/pids/*.pid

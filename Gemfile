@@ -44,6 +44,7 @@ gem 'omniauth-google'
 
 group :development do
   gem 'thin'
+  gem 'xray-rails'
 end
 
 group :development, :test do

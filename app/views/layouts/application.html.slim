@@ -18,6 +18,7 @@ html lang="en"
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag '"http://faviconist.com/icons/64c41c80e958452b1244e4e9fdde812e/favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
+    = javascript_include_tag "xray" if Rails.env.development?
 
   body
     nav.navbar.navbar-default role="navigation"
